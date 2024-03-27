@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,700&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: helvetica, sans-serif;
+  margin: 0 auto;
+  max-width: 600px;
+  background: #269673;
+}
+div {
+  height: 200px;
+  background-size: 100% 100%;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+h1 {
+  font-family: 'Kdam Thmor Pro', cursive;
+  text-align: center;
+  font-size: 100px;
+  color: #aaaaaa;
+  margin: 60px 0 0 0;
+  color: red;
+}
+h2 {
+  text-align: center;
+  color: #bbbbbb;
+  margin: 0px 0 90px 0;
+  font-family: 'Oswald', sans-serif;
+  color: purple;
+}
+p {
+  font-family: 'Ubuntu', sans-serif;
+  color: rgba(2,9005,25,1);
+  background: black;
+  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(0,0,1200000,6), rgba(0,0,80,.4));
+  background: -moz-linear-gradient(bottom, rgba(4,0,6,9), rgba(5,0,5,.4));
+  padding: 10px;
+  line-height: 29px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+
+small {
+  opacity: 0;
+}
+
+.show-description p {
+  height: 100px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+.first{
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzP7rOeAElO4Vef2ndL0-L7LIWbU69sYpLOA&usqp=CAU");
+
+  
+}
+.second{
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ0nowhijTfnicnMamEmZbFf3NIGmx67Wm3g&usqp=CAU");
+}
+.dessert{
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQC9eOzv3Zd0zY0eEd1HkZLVt0Hnw76J_txg&usqp=CAU");
+}
+.price {
+  float: right;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+    font-family:'Oswald', sans-serif;
+  }
+  div {
+    margin: 20px 12px 0 12px;
+  }
+  input {
+  	font-size: 22px;
+  }
+  
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  small {
+    font-size: 16px;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+<h1>Naeem's restaurant</h1>
+<h2>a Kazakhstan eatery</h2>
+<div class="first">
+<input type="number" min="0" style="width: 50px" class="quantities">
+  <p>Spongebob<span class="price">$1000000000000</span><br />
+  <small>Ceaser Salad is very yummy in my tummy and tastes really good and it's also very yummy in my tumm </small></p>
+</div>
+
+<div class="second">
+<input type="number" min="0" style="width: 50px" class="quantities">
+  <p>Ceaser Salad <span class="price">$2</span><br />
+  <small>Ceaser Saladd is made from ceaser and it is very yummy in my tummt and tastes magnificnt because ceaser tastes good.</small></p>
+</div>
+  
+<div class="dessert">
+<input type="number" min="0" style="width: 50px" class="quantities">
+  <p>STOCKX TAG <span class="price">$80</span><br />
+  <small>Gumball Stock X TAG!Gumball Stock X TAG!Gumball Stock X TAG!Gumball Stock X TAG!Gumball Stock X TAG!</small></p>
+</div>
+<br><br>
+  <input id="Name" type="name" placeholder="Your Name">
+  <input id="Email" type="email" placeholder="Your Email">
+  <input id="submit" type="submit">
+ <br><br>
+ 
+<script>
+  $('div').on('click', function() {
+      $(this).toggleClass('show-description');
+  });
+</script>
+  
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-analytics.js";
+  import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
+  
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCdotelrDZn6xudie53A0lr7cn4noaPMrg",
+    authDomain: "naeemproject3.firebaseapp.com",
+    projectId: "naeemproject3",
+    storageBucket: "naeemproject3.appspot.com",
+    messagingSenderId: "1046045064884",
+    appId: "1:1046045064884:web:a9dc598c6c53ce8261a1e1",
+    measurementId: "G-P6RVD94QMN"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getDatabase(app);
+  const Name = document.querySelector("#Name") 
+  const Email = document.querySelector("#Email")
+  document.querySelector('#submit').addEventListener('click', Submit)
+  const quantities = document.querySelectorAll(".quantities") 
+  const itemsList = ["Spongebob", "Ceaser Salad", "STOCKX TAG"]
+  const prices = document.querySelectorAll(".price") 
+    
+    
+    
+  function Submit() {
+    const timestamp = buildTimestamp()
+	  let total = 0
+    let cart = { }
+    for  (let i=0; i<quantities.length; i=i+1) {
+	  	if (quantities[i].value != "0" && quantities[i].value != "") {
+			let price = prices[i].innerHTML.replace('$', '')
+			total = total + quantities[i].value * price 
+	  		cart[itemsList[i]] = parseInt(quantities[i].value) 
+	  	}
+	  	quantities[i].value = ""
+	  }
+
+    set(ref(db, timestamp), {
+  	Name: Name.value,
+        email: Email.value,
+	cart: cart,
+	totalPrice: total,
+	paid: "not yet",
+    });
+
+    Name.value = ""
+    Email.value = ""
+  }
+
+  function buildTimestamp() {
+    const now = new Date();
+    let timestamp = now.getFullYear().toString() + "/";
+    //const month = now.toLocaleString('default', { month: 'long' });
+
+    let month = now.getMonth()+1   //add 1 because Javascript uses 0 for January
+    month = month.toString()
+    month = addLeadingZero(month)
+    timestamp += month + "/"; 
+
+    let date = now.getDate().toString()
+    date = addLeadingZero(date)
+    timestamp += date + "/";
+
+    let hours = now.getHours().toString()
+    hours = addLeadingZero(hours)
+    timestamp += hours + ":";
+
+    let minutes = now.getMinutes().toString()
+    minutes = addLeadingZero(minutes)
+    timestamp += minutes + ":";
+
+    let seconds = now.getSeconds().toString()
+    seconds = addLeadingZero(seconds)
+    timestamp += seconds;
+
+    return timestamp
+  }
+
+  function addLeadingZero(units) {
+  	if (units.length < 2) {
+  		units = "0" + units
+  	}
+  	return units
+  }
+
+
+</script>
+
+
+</body>
